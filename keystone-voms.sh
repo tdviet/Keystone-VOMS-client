@@ -24,7 +24,7 @@ then
 else
   # Error, print debug info and exit
   echo "Error while getting token. Please execute the following command to see full error message:"
-  echo curl -s --capath $CA_PATH --cert $X509_USER_PROXY -d '{"auth":{"voms": true}}' -H "Content-type:application/json" $KEYSTONE/tokens
+  echo curl -v --capath $CA_PATH --cert $X509_USER_PROXY -d '{"auth":{"voms": true}}' -H "Content-type:application/json" $KEYSTONE/tokens
 fi
 
 
