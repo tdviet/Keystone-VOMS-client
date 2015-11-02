@@ -9,9 +9,12 @@ export KEYSTONE="https://keystone3.ui.savba.sk:5000/v2.0/"
 export CA="/etc/grid-security/certificates/SlovakGrid.pem"
 export VO="fedcloud.egi.eu"
 
+
+BASEDIR=$(dirname $BASH_SOURCE)
+
 # Check if VOMS proxy is valid, otherwise request new one
 voms-proxy-info -e ||  voms-proxy-init --voms $VO -rfc
 
 # Get full token from Keystone
-python ./keystone-voms.py
+$BASEDIR/keystone-voms.py
 
