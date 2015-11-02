@@ -1,7 +1,5 @@
 # Keystone-VOMS-client
 
-This script will generated Keystone token from VOMS proxy certificate. No installation required.
-Just download and execute the script on the machine with your Grid certificate (voms-proxy-* command should be available there). 
+This script will generated Keystone token from VOMS proxy certificate. Little python script is created for solving problem with curl on Redhat-based distribution.
 
-RedHat-based distribution may have problems with curl command due to NSS library
-
+Just execute the script keystone-voms.sh on the machine with your Grid certificate (voms-proxy-* command should be available there). 
