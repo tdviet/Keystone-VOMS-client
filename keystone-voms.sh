@@ -13,11 +13,11 @@ export VO="fedcloud.egi.eu"
 BASEDIR=$(dirname $BASH_SOURCE)
 
 # Check if VOMS proxy is valid, otherwise request new one
-#voms-proxy-info -e ||  voms-proxy-init --voms $VO -rfc
+voms-proxy-info -e ||  voms-proxy-init --voms $VO -rfc
 
 # Suggestion by Miroslav Dobrucky: check for -rfc
-voms-proxy-info|grep -i rfc >>/dev/null
-[ $? -gt 0 ] && voms-proxy-init --voms $VO -rfc
+#voms-proxy-info|grep -i rfc >>/dev/null
+#[ $? -gt 0 ] && voms-proxy-init --voms $VO -rfc
 
 # Get full token from Keystone
 $BASEDIR/keystone-voms.py
